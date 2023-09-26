@@ -5,10 +5,10 @@ using UnityEngine;
 public class Damageable : MonoBehaviour
 {
     [Header("Health Settings")]
-    [SerializeField] public float maxHealth = 100f;
-    [SerializeField] public float resistance = 0f;
+    [SerializeField] public int maxHealth = 100;
+    [SerializeField] public int resistance = 0;
 
-    private float currentHealth;
+    private int currentHealth;
 
     // When the game loads this happens.
     void Awake()
@@ -17,7 +17,7 @@ public class Damageable : MonoBehaviour
     }
 
     // This is called by the enemy.
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         if (resistance < damage)
         {
@@ -31,6 +31,17 @@ public class Damageable : MonoBehaviour
     }
 
     // This is abstract because we want each effect to be different.
+    public void setMaxHealth(int maxHealth)
+    {
+        this.maxHealth = maxHealth;
+        currentHealth = maxHealth;
+    }
+
+    public int getHealth()
+    {
+        return currentHealth;
+    }
+
     public virtual void Die()
     {
         Destroy(gameObject);
