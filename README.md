@@ -17,9 +17,9 @@ Text Mesh Pro
 
 # Contributors
 
-Jovic Panahon - Programming, Assets, and Game Design.
-Nick Boisclair - Assets and Game Design.
-Matthew Connell - Assets
-Mark Zayat - TBD
-Joe Elson - TBD
-Adnan Naeem - TBD
+Jovic Panahon - Programming, Assets, and Game Design. <br>
+Nick Boisclair - Assets and Game Design. <br>
+Matthew Connell - Assets <br>
+Mark Zayat - TBD <br>
+Joe Elson - TBD <br>
+Adnan Naeem - TBD <br>
