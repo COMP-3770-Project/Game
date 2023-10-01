@@ -4,33 +4,41 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     [Header("Spawner Settings")]
     [SerializeField] public float spawnRate = 1.0f;
     [SerializeField] public int enemyCount = 1;
+
+    // The enemy types the spawner spawns.
     [SerializeField] public GameObject[] enemies;
 
-    private int roundTimer = 120;
+    private bool canSpawn = false;
+    private Coroutine spawning;
 
-    void Start()
+    public void OnEnable()
     {
-        StartCoroutine(Spawn());
+        canSpawn = true;
+        spawning = StartCoroutine(Spawn());
     }
 
-    // Update is called once per frame
+    public void OnDisable()
+    {
+        canSpawn = false;
+        if (spawning != null) StopCoroutine(spawning);
+    }
+
     private IEnumerator Spawn()
     {
-        while (roundTimer > 0)
+        while (canSpawn)
         {
             for (int i = 0; i < enemyCount; i++)
             {
                 int choice = Random.Range(0, enemies.Length);
                 GameObject enemy = enemies[choice];
                 Instantiate(enemy, transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(spawnRate);
             }
 
-            roundTimer--;
+            yield return new WaitForSeconds(spawnRate);
         }
     }
 }

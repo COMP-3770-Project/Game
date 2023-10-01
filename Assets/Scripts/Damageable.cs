@@ -8,7 +8,7 @@ public class Damageable : MonoBehaviour
     [SerializeField] public int maxHealth = 100;
     [SerializeField] public int resistance = 0;
 
-    private int currentHealth;
+    [SerializeField] public int currentHealth;
 
     // When the game loads this happens.
     void Awake()
@@ -17,12 +17,9 @@ public class Damageable : MonoBehaviour
     }
 
     // This is called by the enemy.
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
-        if (resistance < damage)
-        {
-            currentHealth -= damage;
-        }
+        currentHealth -= damage - resistance;
 
         if (currentHealth <= 0)
         {

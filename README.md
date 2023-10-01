@@ -2,11 +2,14 @@
 
 Group 15's Game Project for COMP 3770: Game Design, Development, and Tools. <br>
 
-# Contributing
+# TO DO List
 
-To contribute you need to make a fork of this repository, make your changes there, create a pull request, then when it gets reviewed and approved it will be merged to the project. <br>
-
-**In your pull request make sure to include all of your changes/additions/deletions.**
+Make tower selection user interface. <br>
+Add more enemy types <br>
+Add more tower types <br>
+Add in dialogue prompts <br>
+Add royalty-free background music <br>
+Create a Main Menu.
 
 # Dependencies
 
@@ -14,4 +17,9 @@ Text Mesh Pro
 
 # Contributors
 
-J.P
+Jovic Panahon - Programming, Assets, and Game Design.
+Nick Boisclair - Assets and Game Design.
+Matthew Connell - Assets
+Mark Zayat - TBD
+Joe Elson - TBD
+Adnan Naeem - TBD
