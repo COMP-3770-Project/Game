@@ -656,6 +656,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundCounter: {fileID: 452900025}
   coinCounter: {fileID: 400848190}
+--- !u!1 &386176495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5152257400173020287, guid: 5e873d75bb0d91c429bd0d764691d4d9, type: 3}
+  m_PrefabInstance: {fileID: 6220583049580166410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400848188
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,7 +847,7 @@ MonoBehaviour:
   money: {fileID: 1513140136}
   gameOver: {fileID: 373127946}
   roundTimer: 120
-  coins: 0
+  coins: 300
   bonus: 0
 --- !u!1 &452900023
 GameObject:
@@ -1262,6 +1267,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &695662593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3667983850883383016, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
+  m_PrefabInstance: {fileID: 1100821463531518226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &890650470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1485,7 @@ GameObject:
   - component: {fileID: 1092789101}
   - component: {fileID: 1092789100}
   - component: {fileID: 1092789099}
+  - component: {fileID: 1092789102}
   m_Layer: 5
   m_Name: Turret
   m_TagString: Untagged
@@ -1544,7 +1555,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1092789100}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1092789102}
+        m_TargetAssemblyTypeName: SpawnTower, Assembly-CSharp
+        m_MethodName: spawnTower
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1092789100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,6 +1606,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092789097}
   m_CullTransparentMesh: 1
+--- !u!114 &1092789102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092789097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af2ee8229cc447ac96ba744e52b7676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerTypes:
+  - {fileID: 386176495}
+  - {fileID: 695662593}
+  lastTower: 0
+  spawnOnLeft: 0
 --- !u!1 &1166416198
 GameObject:
   m_ObjectHideFlags: 0

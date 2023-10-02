@@ -76,4 +76,10 @@ public class GameManager : MonoBehaviour
     {
         coins += amount;
     }
+    public int getCoins(){
+        return coins;
+    }
+    public void removeCoins(int amount){
+        coins -= amount;
+    }
 }
