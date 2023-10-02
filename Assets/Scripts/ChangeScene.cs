@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartBtn : MonoBehaviour
 {
-    public void MoveToScene(int sceneId){
+    public void MoveToScene(int sceneId)
+    {
         SceneManager.LoadScene(sceneId);
     }
 }
