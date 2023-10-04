@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  fireRate: 1
-  firingSound: {fileID: 0}
-  cost: 0
+  fireRate: 0.5
+  soundName: Turret
+  cost: 200
   range: 4.2
