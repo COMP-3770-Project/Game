@@ -19,10 +19,10 @@ public class SpawnTower : MonoBehaviour
             GameObject towerToSpawn = towerTypes[towerId];
             if(spawnOnLeft==0){lastTower*=-1;lastTower-=3; spawnOnLeft=1;}
             else{lastTower*=-1; spawnOnLeft=0;}
-            Vector3 position = new Vector3(lastTower, 0.7f, 0f);
-            if(manager.getCoins() >= 300){
+            Vector3 position = new Vector3(lastTower, 0f, 0f);
+            if(manager.getCoins() >= 100){
             Instantiate(towerToSpawn, position, Quaternion.identity);
-            manager.removeCoins(300);
+            manager.removeCoins(100);
         }
 
 

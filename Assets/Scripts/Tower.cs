@@ -8,7 +8,7 @@ public class Tower : MonoBehaviour
     [Header("Tower Settings")]
     [SerializeField] public int damage = 1;
     [SerializeField] public float fireRate = 1.0f;
-    [SerializeField] public AudioSource firingSound;
+    [SerializeField] public string soundName;
     [SerializeField] public int cost = 100;
 
     [Header("Attribute")]
@@ -19,11 +19,11 @@ public class Tower : MonoBehaviour
     private bool flipped = false;
 
     private Coroutine firing;
-
+    private AudioSource firingSound;
     public void Start()
     {
         playerBase = GameObject.Find("Base");
-
+        firingSound = GameObject.Find(soundName).GetComponent<AudioSource>();
         // This flips the orientation of the tower opposite to the direction of the base.
         if (transform.position.x < playerBase.transform.position.x && !flipped)
         {
