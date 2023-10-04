@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Spawner[] spawners;
     [SerializeField] public TextMeshProUGUI health;
     [SerializeField] public TextMeshProUGUI money;
+    [SerializeField] public TextMeshProUGUI roundTracker;
     [SerializeField] public GameOver gameOver;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
+    public float defaultRoundTimer;
     [SerializeField] public int coins;
+    [SerializeField] public int lastTower = 0;
+    [SerializeField] public int spawnOnLeft = 0;
 
     [SerializeField] public int bonus;
 
@@ -22,6 +26,9 @@ public class GameManager : MonoBehaviour
     private bool roundStarted = false;
 
     private int rounds = 1;
+    public void Start(){
+        defaultRoundTimer = roundTimer;
+    }
 
     public void Update()
     {
@@ -33,6 +40,8 @@ public class GameManager : MonoBehaviour
         if (playerBase != null)
         {
             money.text = coins.ToString();
+            roundTracker.text = rounds.ToString();
+
         }
 
         if (!roundStarted && roundTimer > 0)
@@ -48,7 +57,7 @@ public class GameManager : MonoBehaviour
         if (roundTimer <= 0 && playerBase != null)
         {
             roundEnded = true;
-
+            roundStarted = false;
             foreach (Spawner spawner in spawners)
             {
                 spawner.gameObject.SetActive(false);
@@ -57,6 +66,8 @@ public class GameManager : MonoBehaviour
             rounds++;
 
             coins += bonus * rounds;
+            roundTimer = defaultRoundTimer;
+            roundEnded = false;
         }
 
         if (!roundEnded) roundTimer = roundTimer - Time.deltaTime;
