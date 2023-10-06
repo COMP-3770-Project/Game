@@ -7,11 +7,15 @@ public class rocketQuest: MonoBehaviour {
     public bool isVisible = false;
     Animator ani;
     public GameObject questBook;
-    public void Start() {
-        //questBook.SetActive(isVisible);
+    public void Awake(){
         ani = GetComponent<Animator>();
         ani.SetBool("isVisible", true);
     }
+    // public void Start() {
+    //     //questBook.SetActive(isVisible);
+    //     ani = GetComponent<Animator>();
+    //     ani.SetBool("isVisible", true);
+    // }
 
     public void toggle(){
         ani.SetBool("isVisible", isVisible);
