@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI money;
     [SerializeField] public TextMeshProUGUI roundTracker;
     [SerializeField] public GameOver gameOver;
+    [SerializeField] public AdvanceStage advanceStage;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
@@ -36,7 +37,9 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
-
+        if(rounds ==5){
+            advanceToNextStage();
+        }
         if (playerBase != null)
         {
             money.text = coins.ToString();
@@ -81,6 +84,14 @@ public class GameManager : MonoBehaviour
         }
 
         gameOver.Setup(rounds, coins);
+    }
+    public void advanceToNextStage(){
+        foreach (Spawner spawner in spawners)
+        {
+            spawner.gameObject.SetActive(false);
+        }
+
+        advanceStage.Setup(coins);
     }
 
     public void addCoins(int amount)
