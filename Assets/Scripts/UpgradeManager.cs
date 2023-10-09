@@ -27,7 +27,7 @@ public class UpgradeManager : MonoBehaviour
     public void addUpgrade(int upgrade){
         if(GameManager.coins >= costArray[upgrade]&& !upgradesOwned.Contains(upgrade)){
             GameManager.coins -= costArray[upgrade];
-            upgradesOwned.Add(0);
+            upgradesOwned.Add(upgrade);
         }
         else if (GameManager.coins <= costArray[upgrade] && !upgradesOwned.Contains(upgrade)) {
             //Display prompt "Insufficient DNA"
