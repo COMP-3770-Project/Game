@@ -10,7 +10,7 @@ public class AdvanceStage : MonoBehaviour
     [Header("Advance Next Stage Screen Settings")]
     [SerializeField] public TextMeshProUGUI coinCounter;
 
-    public void Setup(int rounds, int coins)
+    public void Setup(int coins)
     {
         coinCounter.text = coins.ToString();
         gameObject.SetActive(true);
