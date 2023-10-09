@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
     public float defaultRoundTimer;
-    [SerializeField] public int coins;
+    [SerializeField] public static int coins = 300;
     [SerializeField] public int lastTower = 0;
     [SerializeField] public int spawnOnLeft = 0;
 
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         }
         if (playerBase != null)
         {
-            money.text = coins.ToString();
+            money.text = GameManager.coins.ToString();
             roundTracker.text = rounds.ToString();
 
         }
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
             rounds++;
 
-            coins += bonus * rounds;
+            GameManager.coins += bonus * rounds;
             roundTimer = defaultRoundTimer;
             roundEnded = false;
         }
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
         }
 
-        gameOver.Setup(rounds, coins);
+        gameOver.Setup(rounds, GameManager.coins);
     }
     public void advanceToNextStage(){
         foreach (Spawner spawner in spawners)
@@ -91,17 +91,17 @@ public class GameManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
         }
         
-        advanceStage.Setup(coins);
+        advanceStage.Setup(GameManager.coins);
     }
 
     public void addCoins(int amount)
     {
-        coins += amount;
+        GameManager.coins += amount;
     }
     public int getCoins(){
-        return coins;
+        return GameManager.coins;
     }
     public void removeCoins(int amount){
-        coins -= amount;
+        GameManager.coins -= amount;
     }
 }
