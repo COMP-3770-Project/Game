@@ -134,12 +134,12 @@ GameObject:
   - component: {fileID: 3074773}
   - component: {fileID: 3074774}
   m_Layer: 0
-  m_Name: BG1
+  m_Name: BG2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3074773
 Transform:
   m_ObjectHideFlags: 0
@@ -149,8 +149,8 @@ Transform:
   m_GameObject: {fileID: 3074772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0, z: 0}
-  m_LocalScale: {x: 1.12, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0317, y: 4.2317, z: 0}
+  m_LocalScale: {x: 2.2647297, y: 1.7016584, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1932997623}
@@ -196,7 +196,7 @@ SpriteRenderer:
   m_SortingLayerID: 731822177
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 20ae1a1b732d88949b02568cd12c732d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edc5db67b9af49c49a33bb7da6eb6cd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1492,10 +1492,11 @@ MonoBehaviour:
   advanceStage: {fileID: 632414962}
   roundTimer: 3
   defaultRoundTimer: 0
-  coins: 300
   lastTower: 0
   spawnOnLeft: 0
   bonus: 0
+  stage1: {fileID: 0}
+  stage2: {fileID: 0}
 --- !u!1 &452900023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,6 +2262,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591797445}
   m_CullTransparentMesh: 1
+--- !u!1 &598905430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598905431}
+  m_Layer: 0
+  m_Name: baseFloor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &598905431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598905430}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -3.75, z: 0}
+  m_LocalScale: {x: 3.9680662, y: 4.5605664, z: 3.3333333}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2010514994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614427815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,7 +4908,7 @@ GameObject:
   - component: {fileID: 1615850862}
   - component: {fileID: 1615850863}
   m_Layer: 0
-  m_Name: BG2
+  m_Name: BG1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5702,7 +5734,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5193879924c8b854dbcec01b45646867, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 250a812cb2e6b1143a3d050c57010378, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5722,10 +5754,11 @@ Transform:
   m_GameObject: {fileID: 2010514992}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.64, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 598905431}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2010514995

@@ -18,6 +18,19 @@ public class AdvanceStage : MonoBehaviour
 
     public void RestartButton()
     {
+        GameManager.stageNumber++;
+        //End Of Round Coin Bonus
+        switch(GameManager.stageNumber){
+            case 1:
+                GameManager.coins +=100;
+                break;
+            case 2:
+                GameManager.coins +=150;
+                break;
+            case 3:
+                GameManager.coins +=175;
+                break;
+        }
         SceneManager.LoadScene("UpgradeVan");
     }
 

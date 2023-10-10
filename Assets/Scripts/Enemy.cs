@@ -13,6 +13,7 @@ public class Enemy : Damageable
 
     private float lastAttackTime;
     private GameObject playerBase;
+    private GameObject playerBaseFloor;
     private GameManager manager;
     private bool flipped;
 
@@ -20,6 +21,7 @@ public class Enemy : Damageable
     // therefore we have to find the game objects.
     public void Start()
     {
+        playerBaseFloor = GameObject.Find("baseFloor");
         playerBase = GameObject.Find("Base");
         GameObject gm = GameObject.Find("Game Manager");
         manager = gm.GetComponent<GameManager>();
@@ -37,7 +39,7 @@ public class Enemy : Damageable
                 flipped = true;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, playerBase.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, playerBaseFloor.transform.position, speed * Time.deltaTime);
 
             if (CanHit())
             {
