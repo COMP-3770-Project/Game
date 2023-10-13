@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UpgradeVan.unity
     guid: a34ebe6866ad8624d80af90c32520a84
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: 1abff4ed0bfc12246b1fb832d7d6e192
   m_configObjects: {}
