@@ -20,8 +20,10 @@ public class Tower : MonoBehaviour
 
     private Coroutine firing;
     private AudioSource firingSound;
+    LayerMask enemy;
     public void Start()
     {
+        enemy = LayerMask.GetMask("Enemy");
         playerBase = GameObject.Find("Base");
         firingSound = GameObject.Find(soundName).GetComponent<AudioSource>();
         // This flips the orientation of the tower opposite to the direction of the base.
@@ -57,7 +59,7 @@ public class Tower : MonoBehaviour
     private bool FindTargets()
     {
         // An invisible circle is created and if an enemy goes inside the circle they get targetted.
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, (Vector2)transform.position, 0f);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, (Vector2)transform.position, 0f,enemy);
         if (hits.Length > 0)
         {
             target = hits[0].collider;
