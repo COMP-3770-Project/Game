@@ -1863,7 +1863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &443690084
 Transform:
   m_ObjectHideFlags: 0
@@ -2822,15 +2822,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 614427815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8604b7fffca4b0a4e9c70ce2dd2eb449, type: 3}
+  m_Script: {fileID: 11500000, guid: 588d0d1f0eb721f438763461e67af9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 5
   enemyCount: 1
   enemies:
   - {fileID: 6657050458412615061, guid: a512c81ff7bfd694982ee8ab3e926b22, type: 3}
-  - {fileID: 4191460527367223159, guid: cb4d60d60f968af458882537f62291ce, type: 3}
   - {fileID: 8537471332150710763, guid: 97297d44e88143f4eb043f95ba81cc34, type: 3}
+  - {fileID: 4191460527367223159, guid: cb4d60d60f968af458882537f62291ce, type: 3}
 --- !u!1 &622016034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,11 +3091,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &695662593 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3667983850883383016, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
-  m_PrefabInstance: {fileID: 1100821463531518226}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &751354022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3545,16 +3540,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 854845595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45ece09de7eee456b8b43dd41fc3538b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e66a6db3d8fa8c4fb1ffd97e16fabfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 250
+  jumpForce: 500
   groundCheck: {fileID: 345686807}
   groundObjects:
     serializedVersion: 2
-    m_Bits: 64
-  checkRadius: 0.2
+    m_Bits: 0
+  checkRadius: 0
 --- !u!1 &890650470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,15 +3667,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 955137511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8604b7fffca4b0a4e9c70ce2dd2eb449, type: 3}
+  m_Script: {fileID: 11500000, guid: 588d0d1f0eb721f438763461e67af9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 5
   enemyCount: 1
   enemies:
   - {fileID: 6657050458412615061, guid: a512c81ff7bfd694982ee8ab3e926b22, type: 3}
-  - {fileID: 4191460527367223159, guid: cb4d60d60f968af458882537f62291ce, type: 3}
   - {fileID: 8537471332150710763, guid: 97297d44e88143f4eb043f95ba81cc34, type: 3}
+  - {fileID: 4191460527367223159, guid: cb4d60d60f968af458882537f62291ce, type: 3}
 --- !u!1 &1000535355
 GameObject:
   m_ObjectHideFlags: 0
@@ -4147,7 +4142,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1092789102}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpawnTower, Assembly-CSharp
         m_MethodName: spawnTower
         m_Mode: 3
@@ -4206,12 +4201,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092789097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af2ee8229cc447ac96ba744e52b7676, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fef75f56aac64440a57e7f93da564f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   towerTypes:
   - {fileID: 5152257400173020287, guid: 5e873d75bb0d91c429bd0d764691d4d9, type: 3}
-  - {fileID: 695662593}
+  - {fileID: 3667983850883383016, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
 --- !u!1 &1166416198
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,7 +4678,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238494346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af2ee8229cc447ac96ba744e52b7676, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fef75f56aac64440a57e7f93da564f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   towerTypes:
@@ -5029,22 +5024,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1354235410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d09830ff58e91469df3991824cf460, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b5d3529c44d472449906a033cdeb318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerBase: {fileID: 2010514995}
   numOfHearts: 10
   hearts:
   - {fileID: 68361392}
-  - {fileID: 1000535357}
-  - {fileID: 1310427545}
-  - {fileID: 1731834434}
-  - {fileID: 2014132795}
-  - {fileID: 1166416200}
-  - {fileID: 1466948750}
-  - {fileID: 1464409158}
-  - {fileID: 1499241796}
-  - {fileID: 1260076037}
+  - {fileID: 68361392}
+  - {fileID: 68361392}
+  - {fileID: 68361392}
+  - {fileID: 68361392}
+  - {fileID: 68361392}
+  - {fileID: 68361392}
+  - {fileID: 68361392}
+  - {fileID: 68361392}
+  - {fileID: 68361392}
   fullHeart: {fileID: 21300000, guid: d37bf16e2d03d18449bc0f53c001572e, type: 3}
   halfHeart: {fileID: 21300000, guid: 206120dd281481446a1e674a841c259e, type: 3}
   emptyHeart: {fileID: 21300000, guid: 49d9cf809b248df44a177f46e9973b82, type: 3}
@@ -5425,7 +5420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1447023367
 Transform:
   m_ObjectHideFlags: 0
