@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour{
     
-    public float speed = 20f;
+    float speed = 10f;
     public Rigidbody2D rb;
     Renderer r;
     void Start(){
         r = GetComponent<Renderer>();
     }
     void Update(){
-        rb.AddForce(transform.right * speed);
+        transform.position = transform.position + (transform.right * speed * Time.deltaTime);
         if(!r.isVisible){
             Destroy(gameObject);
         }
