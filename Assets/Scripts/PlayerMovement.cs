@@ -14,7 +14,8 @@ public class NewBehaviourScript : MonoBehaviour
     private bool facingRight = true;
     private float moveDirection;
     private bool isJumping = false;
-    private bool isGround;
+    int jumpCount = 0;
+    public GameObject isGround;
     public float checkRadius;
     private void Awake(){
         rb = GetComponent<Rigidbody2D>();
@@ -27,15 +28,13 @@ public class NewBehaviourScript : MonoBehaviour
         Animate();
     }
     private void FixedUpdate(){
-        isGround = Physics2D.OverlapCircle(groundCheck.position,checkRadius,groundObjects);
         Move();
     }
     private void Move(){
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
-        if(isJumping){
+    }
+    void Jump(){
             rb.AddForce(new Vector2(0f, jumpForce));
-        }
-        isJumping = false;
     }
     private void Animate(){
         if(moveDirection>0 && !facingRight){
@@ -51,10 +50,28 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void ProcessInputs(){
         moveDirection = Input.GetAxis("Horizontal");
-        if(Input.GetButtonDown("Jump") && isGround){
-            isJumping = true;
+        
+        if(Input.GetButtonDown("Jump")){
+            
+            if(UpgradeManager.upgradesOwned.Contains(0)){
+                if(jumpCount<2){
+                    Jump();
+                }
+            }
+            else{
+                if(jumpCount<1){
+                    Jump();
+                }
+            }
+            jumpCount++;
+            
         }
         
         
+    }
+    void OnCollisionEnter2D(Collision2D c){
+        if(c.gameObject.layer==6){
+            jumpCount = 0;
+        }
     }
 }
