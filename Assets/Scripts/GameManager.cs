@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI roundTracker;
     [SerializeField] public GameOver gameOver;
     [SerializeField] public AdvanceStage advanceStage;
+    public GameObject bullet;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
