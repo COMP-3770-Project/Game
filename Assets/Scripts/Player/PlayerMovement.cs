@@ -37,8 +37,9 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
         if (isJumping)
         {
-            rb.AddForce(new Vector2(0f, jumpForce));
+            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         }
+
         isJumping = false;
     }
     private void Animate()
@@ -60,7 +61,8 @@ public class PlayerMovement : MonoBehaviour
     private void ProcessInputs()
     {
         moveDirection = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump") && isGround)
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             isJumping = true;
         }
