@@ -35,12 +35,13 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+
         if (isJumping)
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = false;
         }
 
-        isJumping = false;
     }
     private void Animate()
     {
