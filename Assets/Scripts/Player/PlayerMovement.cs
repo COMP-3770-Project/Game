@@ -14,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
     private float moveDirection;
     private bool isJumping = false;
-    private bool isGround;
+    int jumpCount = 0;
+    public GameObject isGround;
     public float checkRadius;
     public void Awake()
     {
@@ -27,14 +28,19 @@ public class PlayerMovement : MonoBehaviour
         ProcessInputs();
         Animate();
     }
+<<<<<<< HEAD:Assets/Scripts/Player/PlayerMovement.cs
     public void FixedUpdate()
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
+=======
+    private void FixedUpdate(){
+>>>>>>> main:Assets/Scripts/PlayerMovement.cs
         Move();
     }
     private void Move()
     {
         rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+<<<<<<< HEAD:Assets/Scripts/Player/PlayerMovement.cs
 
         if (isJumping)
         {
@@ -42,6 +48,11 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         }
 
+=======
+    }
+    void Jump(){
+            rb.AddForce(new Vector2(0f, jumpForce));
+>>>>>>> main:Assets/Scripts/PlayerMovement.cs
     }
     private void Animate()
     {
@@ -62,11 +73,37 @@ public class PlayerMovement : MonoBehaviour
     private void ProcessInputs()
     {
         moveDirection = Input.GetAxis("Horizontal");
+<<<<<<< HEAD:Assets/Scripts/Player/PlayerMovement.cs
 
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             isJumping = true;
         }
 
+=======
+        
+        if(Input.GetButtonDown("Jump")){
+            
+            if(UpgradeManager.upgradesOwned.Contains(0)){
+                if(jumpCount<2){
+                    Jump();
+                }
+            }
+            else{
+                if(jumpCount<1){
+                    Jump();
+                }
+            }
+            jumpCount++;
+            
+        }
+        
+        
+    }
+    void OnCollisionEnter2D(Collision2D c){
+        if(c.gameObject.layer==6){
+            jumpCount = 0;
+        }
+>>>>>>> main:Assets/Scripts/PlayerMovement.cs
     }
 }

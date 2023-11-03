@@ -24,6 +24,8 @@ public class UpgradeManager : MonoBehaviour
             money.text = (GameManager.coins).ToString();
     }
 
+    //0 - Double Jump
+    //1 - Laser AR
     public void addUpgrade(int upgrade){
         if(GameManager.coins >= costArray[upgrade]&& !upgradesOwned.Contains(upgrade)){
             GameManager.coins -= costArray[upgrade];

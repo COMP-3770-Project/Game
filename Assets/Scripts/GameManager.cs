@@ -14,8 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI health;
     [SerializeField] public TextMeshProUGUI money;
     [SerializeField] public TextMeshProUGUI roundTracker;
+    [SerializeField] public TextMeshProUGUI ammoTracker;
     [SerializeField] public GameOver gameOver;
     [SerializeField] public AdvanceStage advanceStage;
+    public GameObject bullet;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
@@ -65,6 +67,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
+        
         if (playerBase == null)
         {
             GameOver();
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour
         {
             money.text = GameManager.coins.ToString();
             roundTracker.text = rounds.ToString();
+            ammoTracker.text = Weapon.bulletsLeft.ToString();
 
         }
 
