@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     private int rounds = 1;
     //Try to implement background switching
     // public void Awake(){
-        
+
     //     Debug.Log(GameManager.stageNumber);
     //     stage1 = GameObject.Find("BG1");
     //     stage2 = GameObject.Find("BG2");
@@ -48,19 +48,21 @@ public class GameManager : MonoBehaviour
     //         stage1.SetActive(true);
     //     }
     // }
-    public void Start() {
-        switch (GameManager.stageNumber) {
+    public void Start()
+    {
+        switch (GameManager.stageNumber)
+        {
             case 1:
                 defaultRoundTimer = roundTimer;
                 break;
             case 2:
-                defaultRoundTimer = roundTimer*1.5f;
+                defaultRoundTimer = roundTimer * 1.5f;
                 break;
             case 3:
-                defaultRoundTimer = roundTimer*2f;
+                defaultRoundTimer = roundTimer * 2f;
                 break;
-                }
-        
+        }
+
     }
 
     public void Update()
@@ -70,7 +72,8 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
-        if(rounds ==5){
+        if (rounds == 5)
+        {
             advanceToNextStage();
         }
         if (playerBase != null)
@@ -119,23 +122,26 @@ public class GameManager : MonoBehaviour
 
         gameOver.Setup(rounds, GameManager.coins);
     }
-    public void advanceToNextStage(){
+    public void advanceToNextStage()
+    {
         foreach (Spawner spawner in spawners)
         {
             spawner.gameObject.SetActive(false);
         }
         advanceStage.Setup(GameManager.coins);
-        
+
     }
 
     public void addCoins(int amount)
     {
         GameManager.coins += amount;
     }
-    public int getCoins(){
+    public int getCoins()
+    {
         return GameManager.coins;
     }
-    public void removeCoins(int amount){
+    public void removeCoins(int amount)
+    {
         GameManager.coins -= amount;
     }
 }

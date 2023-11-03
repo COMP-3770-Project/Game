@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 8537471332150710763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 159.13889, y: 391.21057, z: 3.2273211}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,16 +95,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8537471332150710763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5ac4d53016f264a8652337e10696e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 679b232698c38fc43b8cdc654ab7265c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 100
   resistance: 0
   currentHealth: 0
-  speed: 2.5
+  speed: 3
   damage: 1
   range: 0.5
-  attackCooldown: 2.5
+  attackCooldown: 0.6
   worth: 2
 --- !u!61 &-3180878905804720850
 BoxCollider2D:
