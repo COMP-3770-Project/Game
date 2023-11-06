@@ -13,6 +13,7 @@ public class Enemy : Damageable
 
     private float lastAttackTime;
     private GameObject playerBase;
+    private GameObject player;
     private GameObject playerBaseFloor;
     private GameManager manager;
     private bool flipped;
@@ -23,6 +24,7 @@ public class Enemy : Damageable
     {
         playerBaseFloor = GameObject.Find("baseFloor");
         playerBase = GameObject.Find("Base");
+        player = GameObject.Find("Player");
         GameObject gm = GameObject.Find("Game Manager");
         manager = gm.GetComponent<GameManager>();
     }
@@ -30,7 +32,7 @@ public class Enemy : Damageable
     public void Update()
     {
 
-        if (playerBase != null)
+        if (playerBase != null || player != null)
         {
             // This is to make the sprite face towards the base.
             if (transform.position.x > playerBase.transform.position.x && !flipped)
@@ -51,18 +53,33 @@ public class Enemy : Damageable
     private bool CanHit()
     {
         // Checks if the enemy is within range of the castle and has no cooldowns available.
-        return Vector3.Distance(
-            transform.position, playerBase.transform.position) <= range &&
-            Time.time - lastAttackTime >= attackCooldown;
+        if (Vector3.Distance(transform.position, playerBase.transform.position) <= range &&
+            Time.time - lastAttackTime >= attackCooldown)
+        {
+            return true;
+        }
+
+        if (Vector3.Distance(transform.position, player.transform.position) <= range &&
+            Time.time - lastAttackTime >= attackCooldown)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void Attack()
     {
-        if (playerBase != null)
+        if (playerBase != null && Vector3.Distance(transform.position, playerBase.transform.position) <= range)
         {
             playerBase.GetComponent<Damageable>().TakeDamage(damage);
-            lastAttackTime = Time.time;
         }
+        else if (player != null && Vector3.Distance(transform.position, player.transform.position) <= range)
+        {
+            player.GetComponent<Damageable>().TakeDamage(damage);
+        }
+
+        lastAttackTime = Time.time;
     }
 
     public override void Die()

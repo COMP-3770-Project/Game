@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7415947249150988254}
   - component: {fileID: 5849541688932728635}
   - component: {fileID: 81466552433835871}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: RangedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -576732971
-  m_SortingLayer: 1
+  m_SortingLayerID: -1760539397
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1c457c8bda8102844b5235ccb21ba11c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679b232698c38fc43b8cdc654ab7265c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 2
   resistance: 0
   currentHealth: 0
   speed: 1

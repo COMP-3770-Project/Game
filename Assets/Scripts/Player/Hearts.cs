@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Hearts : MonoBehaviour
 {
-    public Base playerBase;
+    public Player player;
 
     [Header("Heart Settings")]
     [SerializeField] public int numOfHearts;
@@ -20,7 +20,7 @@ public class Hearts : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        maxHealth = playerBase.maxHealth;
+        maxHealth = player.getMaxHealth();
         currentHealth = maxHealth;
 
         for (int i = 0; i < hearts.Length; i++)
@@ -39,11 +39,11 @@ public class Hearts : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (playerBase != null)
+        if (player != null)
         {
-            if (playerBase.currentHealth < currentHealth)
+            if (player.getHealth() < currentHealth)
             {
-                currentHealth = playerBase.currentHealth;
+                currentHealth = player.getHealth();
 
                 // This checks whether or not to set it to an empty heart.
                 if (currentHealth % 10 == 0)

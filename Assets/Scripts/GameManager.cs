@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI ammoTracker;
     [SerializeField] public GameOver gameOver;
     [SerializeField] public AdvanceStage advanceStage;
-    public GameObject bullet;
+    [SerializeField] public Player player;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
@@ -67,21 +67,22 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        
-        if (playerBase == null)
+
+        if (playerBase == null || player == null)
         {
             GameOver();
         }
+
         if (rounds == 5)
         {
             advanceToNextStage();
         }
+
         if (playerBase != null)
         {
             money.text = GameManager.coins.ToString();
             roundTracker.text = rounds.ToString();
             ammoTracker.text = Weapon.bulletsLeft.ToString();
-
         }
 
         if (!roundStarted && roundTimer > 0)
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour
             roundEnded = false;
         }
 
-        if (!roundEnded) roundTimer = roundTimer - Time.deltaTime;
+        if (!roundEnded) roundTimer -= Time.deltaTime;
     }
 
     public void GameOver()

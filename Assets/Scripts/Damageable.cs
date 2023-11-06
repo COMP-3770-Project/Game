@@ -16,7 +16,7 @@ public class Damageable : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // This is called by the enemy.
+    // This is abstract because we can change how the logic works.
     public virtual void TakeDamage(int damage)
     {
         currentHealth -= damage - resistance;
@@ -27,7 +27,6 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    // This is abstract because we want each effect to be different.
     public void setMaxHealth(int maxHealth)
     {
         this.maxHealth = maxHealth;
@@ -39,6 +38,12 @@ public class Damageable : MonoBehaviour
         return currentHealth;
     }
 
+    public int getMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    // This is abstract because we want each effect to be different.
     public virtual void Die()
     {
         Destroy(gameObject);
