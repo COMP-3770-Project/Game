@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float moveSpeed = 5;
-    public float jumpForce = 500;
+    public float jumpForce = 300;
     public Transform groundCheck;
     public LayerMask groundObjects;
     private Rigidbody2D rb;
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = Input.GetAxis("Horizontal");
         
         if(Input.GetButtonDown("Jump")){
-            
+            Debug.Log(jumpCount);
             if(UpgradeManager.upgradesOwned.Contains(0)){
                 if(jumpCount<2){
                     Jump();
@@ -59,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else{
                 if(jumpCount<1){
+                    Debug.Log("Jumped");
                     Jump();
                 }
             }
@@ -70,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D c){
         if(c.gameObject.layer==6){
+            Debug.Log("Ground");
             jumpCount = 0;
         }
     }

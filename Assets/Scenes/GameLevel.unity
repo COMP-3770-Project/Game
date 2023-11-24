@@ -2951,9 +2951,9 @@ MonoBehaviour:
   spawnRate: 5
   enemyCount: 1
   enemies:
-  - {fileID: 6657050458412615061, guid: a512c81ff7bfd694982ee8ab3e926b22, type: 3}
-  - {fileID: 8537471332150710763, guid: 97297d44e88143f4eb043f95ba81cc34, type: 3}
-  - {fileID: 4191460527367223159, guid: cb4d60d60f968af458882537f62291ce, type: 3}
+  - {fileID: 6657050458412615061, guid: c1bdf4d405995c3408681c1662a62f8a, type: 3}
+  - {fileID: 8537471332150710763, guid: cda68e92b71921a43b306532c4f01c81, type: 3}
+  - {fileID: 4191460527367223159, guid: b8257d2527bb9144381545dcdb7d2e0c, type: 3}
 --- !u!1 &622016034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,7 +3596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &818329270
 Transform:
   m_ObjectHideFlags: 0
@@ -3651,7 +3651,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -14983321
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ed464db30e0eaf642b5237f04428a18a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3772,7 +3772,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -3870,8 +3870,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1771340899
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cb9652f1f6c3b10498826f7d176151e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3914,7 +3914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 4
+  jumpForce: 300
   groundCheck: {fileID: 2116452045}
   groundObjects:
     serializedVersion: 2
@@ -4091,9 +4091,9 @@ MonoBehaviour:
   spawnRate: 5
   enemyCount: 1
   enemies:
-  - {fileID: 6657050458412615061, guid: a512c81ff7bfd694982ee8ab3e926b22, type: 3}
-  - {fileID: 8537471332150710763, guid: 97297d44e88143f4eb043f95ba81cc34, type: 3}
-  - {fileID: 4191460527367223159, guid: cb4d60d60f968af458882537f62291ce, type: 3}
+  - {fileID: 6657050458412615061, guid: c1bdf4d405995c3408681c1662a62f8a, type: 3}
+  - {fileID: 8537471332150710763, guid: cda68e92b71921a43b306532c4f01c81, type: 3}
+  - {fileID: 4191460527367223159, guid: b8257d2527bb9144381545dcdb7d2e0c, type: 3}
 --- !u!1 &1000535355
 GameObject:
   m_ObjectHideFlags: 0
@@ -7189,7 +7189,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -14983321
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c3eba0c7b8cb1084eaf6ebde60239150, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8030,8 +8030,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -576732971
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 250a812cb2e6b1143a3d050c57010378, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

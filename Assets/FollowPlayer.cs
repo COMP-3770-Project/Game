@@ -12,6 +12,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, player.position + offset, speed);
+
+        if(player.position.x<=6.5 && player.position.x>=-6.25)transform.position = Vector3.Lerp(transform.position, player.position + offset, speed);
     }
 }
