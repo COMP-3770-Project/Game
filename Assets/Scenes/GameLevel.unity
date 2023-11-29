@@ -3651,7 +3651,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -14983321
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ed464db30e0eaf642b5237f04428a18a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3871,7 +3871,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1771340899
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: cb9652f1f6c3b10498826f7d176151e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3919,6 +3919,7 @@ MonoBehaviour:
   groundObjects:
     serializedVersion: 2
     m_Bits: 64
+  facingRight: 1
   isGround: {fileID: 751354022}
   checkRadius: 5
 --- !u!114 &854845601
@@ -7189,7 +7190,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -14983321
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c3eba0c7b8cb1084eaf6ebde60239150, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8736,6 +8737,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667983850883383016, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5836999604437741677, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.83
@@ -8774,6 +8779,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836999604437741677, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929807089957015174, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9081239179344217438, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}

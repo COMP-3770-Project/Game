@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundObjects;
     private Rigidbody2D rb;
     
-    private bool facingRight = true;
+    public bool facingRight = true;
     private float moveDirection;
     int jumpCount = 0;
     public GameObject isGround;
