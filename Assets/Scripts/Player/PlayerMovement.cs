@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Player player;
     // Start is called before the first frame update
     public float moveSpeed = 5;
     public float jumpForce = 300;
@@ -73,6 +74,9 @@ public class PlayerMovement : MonoBehaviour
         if(c.gameObject.layer==6){
             Debug.Log("Ground");
             jumpCount = 0;
+        }
+        if(c.gameObject.layer==10){
+            player.TakeDamage(5);
         }
     }
 }

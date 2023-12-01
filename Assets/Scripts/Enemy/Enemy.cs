@@ -15,7 +15,7 @@ public class Enemy : Damageable
     private GameObject playerBase;
     private GameObject player;
     private GameObject playerBaseFloor;
-    private GameManager manager;
+    private GameManagerSideScroller manager;
     private bool flipped;
 
     // Since this will be used for a prefab, we cannot take a reference through the editor, 
@@ -25,8 +25,8 @@ public class Enemy : Damageable
         playerBaseFloor = GameObject.Find("baseFloor");
         playerBase = GameObject.Find("Base");
         player = GameObject.Find("Player");
-        GameObject gm = GameObject.Find("Game Manager");
-        manager = gm.GetComponent<GameManager>();
+        GameObject gm = GameObject.Find("GameManager");
+        manager = gm.GetComponent<GameManagerSideScroller>();
     }
 
     public void Update()
