@@ -113,15 +113,15 @@ public class GameManager : MonoBehaviour
 
         if (!roundEnded) roundTimer -= Time.deltaTime;
     }
-
+    
     public void GameOver()
     {
         foreach (Spawner spawner in spawners)
         {
             spawner.gameObject.SetActive(false);
         }
-
         gameOver.Setup(rounds, GameManager.coins);
+
     }
     public void advanceToNextStage()
     {
