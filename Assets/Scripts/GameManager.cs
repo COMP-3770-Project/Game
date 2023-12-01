@@ -148,6 +148,8 @@ public class GameManager : MonoBehaviour
     {
         GameManager.coins -= amount;
     }
+
+    //sets dialogue box to be active or inactive
     public void setDialogueBox(bool isVisible)
     {
         dialogueBox.gameObject.SetActive(isVisible);
