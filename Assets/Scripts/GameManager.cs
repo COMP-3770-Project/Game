@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameOver gameOver;
     [SerializeField] public AdvanceStage advanceStage;
     [SerializeField] public Player player;
+    [SerializeField] public ToggleDialogueBox dialogueBox;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
     // }
     public void Start()
     {
+
         switch (GameManager.stageNumber)
         {
             case 1:
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
                 defaultRoundTimer = roundTimer * 2f;
                 break;
         }
+        setDialogueBox(false);
 
     }
 
@@ -144,5 +147,9 @@ public class GameManager : MonoBehaviour
     public void removeCoins(int amount)
     {
         GameManager.coins -= amount;
+    }
+    public void setDialogueBox(bool isVisible)
+    {
+        dialogueBox.gameObject.SetActive(isVisible);
     }
 }
