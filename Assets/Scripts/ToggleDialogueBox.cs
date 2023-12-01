@@ -33,4 +33,9 @@ public class ToggleDialogueBox : MonoBehaviour
     {
         text.SetText(str);
     }
+
+    public void OnButtonClick()
+    {
+        gameObject.SetActive(false);
+    }
 }

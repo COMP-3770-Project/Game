@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
                 defaultRoundTimer = roundTimer * 2f;
                 break;
         }
-        setDialogueBox(false);
+        setDialogueBox(true);
 
     }
 
@@ -153,5 +153,10 @@ public class GameManager : MonoBehaviour
     public void setDialogueBox(bool isVisible)
     {
         dialogueBox.gameObject.SetActive(isVisible);
+    }
+
+    public void OnDialogueCloseButton()
+    {
+        dialogueBox.gameObject.SetActive(false);
     }
 }
