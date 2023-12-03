@@ -2009,7 +2009,7 @@ MonoBehaviour:
   gameOver: {fileID: 373127946}
   advanceStage: {fileID: 632414962}
   player: {fileID: 854845601}
-  dialogueBox: {fileID: 0}
+  dialogueBox: {fileID: 1815679653}
   roundTimer: 60
   defaultRoundTimer: 0
   lastTower: 0
@@ -7903,7 +7903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306c2153bb0204a2e84362c9d0b39690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisible: 1
+  isVisible: 0
   text: {fileID: 1642811021}
 --- !u!95 &1815679654
 Animator:
@@ -7913,7 +7913,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815679649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a2b1ac228d93542de9543980cc91033f, type: 2}
   m_CullingMode: 0
@@ -8920,7 +8920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cea14ffe8f04a6ab2b7a76b8dbef74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisible: 0
   questBook: {fileID: 2051547478}
 --- !u!95 &2051547484
 Animator:
