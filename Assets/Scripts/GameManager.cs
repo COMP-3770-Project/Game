@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour
         }
         setDialogueBox(true);
 
+        dialogueBox.SetDialogueText("truly humble under god");
+
     }
 
     public void Update()

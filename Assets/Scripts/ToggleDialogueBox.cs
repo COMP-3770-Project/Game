@@ -6,8 +6,10 @@ using TMPro;
 public class ToggleDialogueBox : MonoBehaviour
 {
     public bool isVisible = false;
-    Animator ani;
+    //Animator ani;
     public TextMeshProUGUI text;
+
+
     //public void Awake()
     //{
     //    ani = GetComponent<Animator>();
@@ -15,19 +17,15 @@ public class ToggleDialogueBox : MonoBehaviour
     //}
 
 
-    // public void Start() {
-    //     //questBook.SetActive(isVisible);
-    //     ani = GetComponent<Animator>();
-    //     ani.SetBool("isVisible", true);
-    // }
+     public void Start() {
+        //gameObject.SetActive(false);
 
-    //public void toggle()
-    //{
-    //    ani.SetBool("isVisible", isVisible);
-    //    isVisible = !isVisible;
-    //    //questBook.SetActive(isVisible);
+        //questBook.SetActive(isVisible);
+        //ani = GetComponent<Animator>();
+         //ani.SetBool("isVisible", true);
+    }
 
-    //}
+
 
     public void SetDialogueText(string str)
     {
