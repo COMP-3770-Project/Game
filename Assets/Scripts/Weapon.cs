@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] public Transform firePoint;
 
-    public Transform firePoint;
-    public GameObject bulletPrefab;
-    GameObject bullet;
-    public List<Sprite> weapons;
-    public AudioSource firingEffect;
-    public AudioSource reloadSound;
-    public static string currentWeapon = "Pistol";
-    public static int bulletsLeft = 30;
-    void Awake()
+    [Header("Weapon Statistics")]
+    [SerializeField] public float fireRate;
+    [SerializeField] public int damage;
+    [SerializeField] public int magSize = 10;
+    [SerializeField] public float reloadSpeed;
+
+    [Header("Weapon Aesthetics")]
+    [SerializeField] public static string currentWeapon = "Pistol";
+    [SerializeField] public GameObject bulletPrefab;
+    [SerializeField] public List<Sprite> weapons;
+    [SerializeField] public AudioSource firingEffect;
+    [SerializeField] public AudioSource reloadSound;
+
+    // You set these values for the weapons and they increase each level.
+    [Header("Weapon Upgrades")]
+    [SerializeField] public int maxLevel;
+    [SerializeField] public float fireRateUpgrade;
+    [SerializeField] public int damageUpgrade;
+    [SerializeField] public int magSizeUpgrade;
+    [SerializeField] public float reloadSpeedUpgrade;
+    public static int bulletsLeft;
+    private bool isShooting;
+    private void Awake()
     {
+        bulletsLeft = magSize;
+
         //Laser AR
         if (UpgradeManager.upgradesOwned.Contains(1))
         {
@@ -23,29 +40,46 @@ public class Weapon : MonoBehaviour
         }
 
     }
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(Reload());
 
         }
-        if (Input.GetMouseButtonDown(0) && bulletsLeft > 0)
+        if (Input.GetMouseButtonDown(0) && canShoot())
         {
-            firingEffect.Play();
-            Weapon.bulletsLeft--;
-            Shoot();
+            isShooting = true;
+            StartCoroutine(Shoot());
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            isShooting = false;
+            StopCoroutine(Shoot());
         }
     }
 
-    void Shoot()
+    private bool canShoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        return !isShooting && bulletsLeft > 0;
     }
-    IEnumerator Reload()
+
+    private IEnumerator Shoot()
+    {
+        while (isShooting && bulletsLeft > 0)
+        {
+            firingEffect.Play();
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            bullet.GetComponent<Bullet>().SetDamage(damage);
+            bulletsLeft--;
+            yield return new WaitForSeconds(1.0f / fireRate);
+        }
+    }
+
+    private IEnumerator Reload()
     {
         reloadSound.Play();
-        yield return new WaitForSeconds(1.5f);
-        Weapon.bulletsLeft = 30;
+        yield return new WaitForSeconds(1.0f / reloadSpeed);
+        bulletsLeft = magSize;
     }
 }

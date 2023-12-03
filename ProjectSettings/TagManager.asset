@@ -13,9 +13,9 @@ TagManager:
   - UI
   - Ground
   - Player
+  - Weapon
   - Enemy
   - Bullet
-  - 
   - 
   - 
   - 
@@ -46,4 +46,13 @@ TagManager:
     locked: 0
   - name: Extra
     uniqueID: 3718234325
+    locked: 0
+  - name: Weapon
+    uniqueID: 4279983975
+    locked: 0
+  - name: Player
+    uniqueID: 2523626397
+    locked: 0
+  - name: Enemy
+    uniqueID: 2534427899
     locked: 0

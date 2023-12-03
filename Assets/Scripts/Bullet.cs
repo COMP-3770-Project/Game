@@ -7,15 +7,18 @@ public class Bullet : MonoBehaviour
 
     float speed = 10f;
     public Rigidbody2D rb;
-    Renderer r;
+    Renderer renderer;
     void Start()
     {
-        r = GetComponent<Renderer>();
+        renderer = GetComponent<Renderer>();
     }
+
+    private int damage = 0;
     void Update()
     {
         transform.position = transform.position + (transform.right * speed * Time.deltaTime);
-        if (!r.isVisible)
+
+        if (!renderer.isVisible)
         {
             Destroy(gameObject);
         }
@@ -27,9 +30,14 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.layer == 9)
         {
-            collision.gameObject.GetComponent<Damageable>().TakeDamage(1);
+            collision.gameObject.GetComponent<Damageable>().TakeDamage(damage);
             Destroy(gameObject);
         }
 
+    }
+
+    public void SetDamage(int dmg)
+    {
+        damage = dmg;
     }
 }
