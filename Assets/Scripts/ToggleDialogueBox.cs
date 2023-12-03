@@ -18,7 +18,7 @@ public class ToggleDialogueBox : MonoBehaviour
 
 
      public void Start() {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
 
         //questBook.SetActive(isVisible);
         //ani = GetComponent<Animator>();
@@ -35,5 +35,13 @@ public class ToggleDialogueBox : MonoBehaviour
     public void OnButtonClick()
     {
         gameObject.SetActive(false);
+    }
+
+    public void toggle()
+    {
+        //ani.SetBool("isVisible", isVisible);
+        isVisible = !isVisible;
+        gameObject.SetActive(isVisible);
+
     }
 }

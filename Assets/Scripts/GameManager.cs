@@ -64,8 +64,7 @@ public class GameManager : MonoBehaviour
                 defaultRoundTimer = roundTimer * 2f;
                 break;
         }
-        setDialogueBox(true);
-
+        dialogueBox.toggle();
         dialogueBox.SetDialogueText("truly humble under god");
 
     }
@@ -151,14 +150,10 @@ public class GameManager : MonoBehaviour
         GameManager.coins -= amount;
     }
 
-    //sets dialogue box to be active or inactive
-    public void setDialogueBox(bool isVisible)
-    {
-        dialogueBox.gameObject.SetActive(isVisible);
-    }
+    ////sets dialogue box to be active or inactive
+    //public void setDialogueBox(bool isVisible)
+    //{
+    //    dialogueBox.gameObject.SetActive(isVisible);
+    //}
 
-    public void OnDialogueCloseButton()
-    {
-        dialogueBox.gameObject.SetActive(false);
-    }
 }

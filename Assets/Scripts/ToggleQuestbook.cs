@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class rocketQuest: MonoBehaviour {
-    public bool isVisible = false;
+    bool isVisible = false;
     Animator ani;
     public GameObject questBook;
     public void Awake(){
