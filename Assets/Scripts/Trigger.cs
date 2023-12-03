@@ -12,12 +12,15 @@ public class Trigger : MonoBehaviour
     GameObject TimePrompt;
     GameObject GateClose;
     GameObject Queen;
+    GameObject QueenHealth;
     void Start(){
         Queen = GameObject.Find("AlienQueen");
+        QueenHealth = GameObject.Find("QueenHealth");
         TimePrompt = GameObject.Find("TimeLeft");
         GateClose = GameObject.Find("GateClose");
         TimePrompt.SetActive(false);
         Queen.SetActive(false);
+        QueenHealth.SetActive(false);
     }
     void Update(){
         if(timeRemaining<=0){
@@ -29,6 +32,7 @@ public class Trigger : MonoBehaviour
             }
             GateClose.transform.position = new Vector3(GateClose.transform.position.x, 10f, GateClose.transform.position.z);
             Queen.SetActive(true);
+            QueenHealth.SetActive(true);
         }
         if(start){
             timeRemaining = timeRemaining - Time.deltaTime;
