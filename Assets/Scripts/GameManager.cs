@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameOver gameOver;
     [SerializeField] public AdvanceStage advanceStage;
     [SerializeField] public Player player;
+    [SerializeField] public ToggleDialogueBox dialogueBox;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
