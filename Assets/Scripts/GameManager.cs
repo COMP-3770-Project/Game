@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -30,24 +27,8 @@ public class GameManager : MonoBehaviour
     public static int stageNumber = 1;
     private bool roundEnded = false;
     private bool roundStarted = false;
-    // public GameObject stage1;
-    // public GameObject stage2;
     private int rounds = 1;
-    //Try to implement background switching
-    // public void Awake(){
 
-    //     Debug.Log(GameManager.stageNumber);
-    //     stage1 = GameObject.Find("BG1");
-    //     stage2 = GameObject.Find("BG2");
-    //     if(GameManager.stageNumber == 2){
-    //         stage1.SetActive(false);
-    //         stage2.SetActive(true);
-    //     }
-    //     if(GameManager.stageNumber == 1){
-    //         stage2.SetActive(false);
-    //         stage1.SetActive(true);
-    //     }
-    // }
     public void Start()
     {
         switch (GameManager.stageNumber)
@@ -62,12 +43,10 @@ public class GameManager : MonoBehaviour
                 defaultRoundTimer = roundTimer * 2f;
                 break;
         }
-
     }
 
     public void Update()
     {
-
         if (playerBase == null || player == null)
         {
             GameOver();
@@ -113,7 +92,7 @@ public class GameManager : MonoBehaviour
 
         if (!roundEnded) roundTimer -= Time.deltaTime;
     }
-    
+
     public void GameOver()
     {
         foreach (Spawner spawner in spawners)
@@ -121,8 +100,8 @@ public class GameManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
         }
         gameOver.Setup(rounds, GameManager.coins);
-
     }
+
     public void advanceToNextStage()
     {
         foreach (Spawner spawner in spawners)
@@ -130,17 +109,18 @@ public class GameManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
         }
         advanceStage.Setup(GameManager.coins);
-
     }
 
     public void addCoins(int amount)
     {
         GameManager.coins += amount;
     }
+
     public int getCoins()
     {
         return GameManager.coins;
     }
+
     public void removeCoins(int amount)
     {
         GameManager.coins -= amount;
