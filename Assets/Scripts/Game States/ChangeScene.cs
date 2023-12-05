@@ -7,8 +7,9 @@ public class StartBtn : MonoBehaviour
 {
     public void MoveToScene(int sceneId)
     {
+        Debug.Log(GameManager.stageNumber);
         if(sceneId>=1){
-            if(GameManager.stageNumber==2){
+            if(GameManager.stageNumber==1){
                 SceneManager.LoadScene(3);
             }
         }

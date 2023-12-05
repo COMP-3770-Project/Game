@@ -70,6 +70,7 @@ public class Enemy : Damageable
 
     private void Attack()
     {
+     
         if (playerBase != null && Vector3.Distance(transform.position, playerBase.transform.position) <= range)
         {
             playerBase.GetComponent<Damageable>().TakeDamage(damage);
