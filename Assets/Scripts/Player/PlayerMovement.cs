@@ -30,7 +30,9 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
     private void Move(){
-        rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
+        float speedMultiplier = (float) (UpgradeManager.upgradesOwned.Contains(2) ? 3.0 : 1.0); 
+
+        rb.velocity = new Vector2(moveDirection * moveSpeed * speedMultiplier, rb.velocity.y);
     }
     void Jump(){
             rb.AddForce(new Vector2(0f, jumpForce));
