@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     private bool roundEnded = false;
     private bool roundStarted = false;
     private int rounds = 1;
-
     public void Start()
     {
         switch (GameManager.stageNumber)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : Damageable
 {
@@ -15,7 +16,8 @@ public class Enemy : Damageable
     private GameObject playerBase;
     private GameObject player;
     private GameObject playerBaseFloor;
-    private GameManager manager;
+    private GameManagerSideScroller manager;
+    private GameManager managerGM;
     private bool flipped;
 
     // Since this will be used for a prefab, we cannot take a reference through the editor, 
@@ -25,8 +27,14 @@ public class Enemy : Damageable
         playerBaseFloor = GameObject.Find("baseFloor");
         playerBase = GameObject.Find("Base");
         player = GameObject.Find("Player");
-        GameObject gm = GameObject.Find("Game Manager");
-        manager = gm.GetComponent<GameManager>();
+        GameObject gm = GameObject.Find("GameManager");
+        if(SceneManager.GetActiveScene().name == "FinalLevel"){
+            manager = gm.GetComponent<GameManagerSideScroller>();
+        }
+        else{
+            managerGM = gm.GetComponent<GameManager>();
+        }
+        
     }
 
     public void Update()
@@ -85,7 +93,13 @@ public class Enemy : Damageable
     public override void Die()
     {
         base.Die();
-        manager.addCoins(worth);
+        if(SceneManager.GetActiveScene().name == "FinalLevel"){
+            manager.addCoins(worth);
+        }
+        else{
+            managerGM.addCoins(worth);
+        }
+        
     }
 
     // TO DO: Add logic for upgrading enemies

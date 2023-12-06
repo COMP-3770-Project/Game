@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
@@ -13,6 +14,11 @@ public class FollowPlayer : MonoBehaviour
     void LateUpdate()
     {
 
-        if(player.position.x<=6.5 && player.position.x>=-6.25)transform.position = Vector3.Lerp(transform.position, player.position + offset, speed);
+        if (SceneManager.GetActiveScene().name == "FinalLevel") {
+            transform.position = new Vector3(player.position.x, 2f, -6f);
+        }
+        if (player.position.x <= 6.5 && player.position.x >= -6.25 && SceneManager.GetActiveScene().name != "FinalLevel") {
+            transform.position = Vector3.Lerp(transform.position, player.position + offset, speed);
+        }
     }
 }
