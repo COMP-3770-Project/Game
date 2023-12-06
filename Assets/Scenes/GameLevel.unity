@@ -2912,7 +2912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &622016035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2931,8 +2931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 28.5}
-  m_SizeDelta: {x: 250, y: 104}
+  m_AnchoredPosition: {x: 0, y: 43}
+  m_SizeDelta: {x: 250, y: 35.598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622016036
 MonoBehaviour:
@@ -2954,7 +2954,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 21cffdef516874649a1a4d92d41bbdc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdcc2240297fe1341a0e6920b94b427f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3851,6 +3851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e66a6db3d8fa8c4fb1ffd97e16fabfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   moveSpeed: 5
   jumpForce: 300
   groundCheck: {fileID: 2116452045}
@@ -3875,6 +3876,7 @@ MonoBehaviour:
   resistance: 0
   currentHealth: 0
   ouch: {fileID: 741172410}
+  upgradeManager: {fileID: 0}
 --- !u!1 &868619338
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,7 +4634,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1092789102}
         m_TargetAssemblyTypeName: SpawnTower, Assembly-CSharp
         m_MethodName: spawnTower
         m_Mode: 3
@@ -4694,6 +4696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fef75f56aac64440a57e7f93da564f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1677674514}
   towerTypes:
   - {fileID: 5152257400173020287, guid: 5e873d75bb0d91c429bd0d764691d4d9, type: 3}
   - {fileID: 3667983850883383016, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
@@ -5171,6 +5174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fef75f56aac64440a57e7f93da564f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1677674514}
   towerTypes:
   - {fileID: 5152257400173020287, guid: 5e873d75bb0d91c429bd0d764691d4d9, type: 3}
   - {fileID: 3667983850883383016, guid: 26f5c3927ed66524fb22e9f3c0d748be, type: 3}
@@ -7134,6 +7138,7 @@ MonoBehaviour:
   gameOver: {fileID: 373127946}
   advanceStage: {fileID: 632414962}
   player: {fileID: 854845601}
+  dialogueBox: {fileID: 0}
   roundTimer: 60
   defaultRoundTimer: 0
   lastTower: 0
