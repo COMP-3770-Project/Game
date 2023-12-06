@@ -1915,7 +1915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ee06987d5f6b65f45a100dc23a7f0a00, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5d534bef23be50469d10e990d81c12b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2346,6 +2346,7 @@ MonoBehaviour:
   resistance: 0
   currentHealth: 0
   ouch: {fileID: 0}
+  upgradeManager: {fileID: 0}
 --- !u!114 &469989630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2358,6 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e66a6db3d8fa8c4fb1ffd97e16fabfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   moveSpeed: 5
   jumpForce: 300
   groundCheck: {fileID: 262685653}
@@ -5957,7 +5959,8 @@ MonoBehaviour:
   gameOver: {fileID: 1482084305}
   advanceStage: {fileID: 1834638570}
   player: {fileID: 469989629}
-  roundTimer: 60
+  dialogueBox: {fileID: 0}
+  roundTimer: 5
   defaultRoundTimer: 0
   lastTower: 0
   spawnOnLeft: 0
@@ -8736,7 +8739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6d62eac7652864548948a8bf81d7c193, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
