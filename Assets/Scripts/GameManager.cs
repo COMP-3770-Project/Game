@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -18,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameOver gameOver;
     [SerializeField] public AdvanceStage advanceStage;
     [SerializeField] public Player player;
+    [SerializeField] public ToggleDialogueBox dialogueBox;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
@@ -45,12 +43,10 @@ public class GameManager : MonoBehaviour
                 defaultRoundTimer = roundTimer * 2f;
                 break;
         }
-
     }
 
     public void Update()
     {
-
         if (playerBase == null || player == null)
         {
             GameOver();
@@ -96,7 +92,7 @@ public class GameManager : MonoBehaviour
 
         if (!roundEnded) roundTimer -= Time.deltaTime;
     }
-    
+
     public void GameOver()
     {
         foreach (Spawner spawner in spawners)
@@ -104,8 +100,8 @@ public class GameManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
         }
         gameOver.Setup(rounds, GameManager.coins);
-
     }
+
     public void advanceToNextStage()
     {
         foreach (Spawner spawner in spawners)
@@ -113,17 +109,18 @@ public class GameManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
         }
         advanceStage.Setup(GameManager.coins);
-
     }
 
     public void addCoins(int amount)
     {
         GameManager.coins += amount;
     }
+
     public int getCoins()
     {
         return GameManager.coins;
     }
+
     public void removeCoins(int amount)
     {
         GameManager.coins -= amount;
