@@ -11,6 +11,7 @@ public class Trigger : MonoBehaviour
     bool start = false;
     GameObject TimePrompt;
     GameObject GateClose;
+    GameObject GateOpen;
     GameObject Queen;
     GameObject QueenHealth;
     void Start(){
@@ -18,6 +19,7 @@ public class Trigger : MonoBehaviour
         QueenHealth = GameObject.Find("QueenHealth");
         TimePrompt = GameObject.Find("TimeLeft");
         GateClose = GameObject.Find("GateClose");
+        GateOpen = GameObject.Find("GateOpen");
         TimePrompt.SetActive(false);
         Queen.SetActive(false);
         QueenHealth.SetActive(false);
@@ -31,6 +33,7 @@ public class Trigger : MonoBehaviour
                 spawner.gameObject.SetActive(false);
             }
             GateClose.transform.position = new Vector3(GateClose.transform.position.x, 10f, GateClose.transform.position.z);
+            GateOpen.SetActive(false);
             Queen.SetActive(true);
             QueenHealth.SetActive(true);
         }
@@ -40,6 +43,7 @@ public class Trigger : MonoBehaviour
         }
     }
     void OnTriggerExit2D(Collider2D collider){
+        //Make sure its only on players collider
         TimePrompt.SetActive(true);
         GameManagerSideScroller.Gate.SetActive(true);
             foreach (Spawner spawner in spawners)

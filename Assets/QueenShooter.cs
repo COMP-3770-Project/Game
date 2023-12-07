@@ -10,6 +10,8 @@ public class QueenShooter : MonoBehaviour
     public GameObject Queen;
     public GameObject Player;
     public Transform bulletPOS;
+
+    public AudioSource firingEffect;
     public int queenHealth = 100;
     public Image queenHealthBar;
     private float timer;
@@ -37,6 +39,7 @@ public class QueenShooter : MonoBehaviour
             timer2 += Time.deltaTime;
             if(timer>=2){
                 timer = 0;
+                firingEffect.Play();
                 shoot();
             }
             if(timer2>=5){
@@ -61,14 +64,20 @@ public class QueenShooter : MonoBehaviour
         Instantiate(bullet, bulletPOS.position, Quaternion.identity);
     }
     void moveToOtherSide(){
-        if(Queen.transform.position.x==71.5){
-            Queen.transform.position = new Vector3(66.5f, Queen.transform.position.y, Queen.transform.position.z);
-        }
-        else if(Queen.transform.position.x==66.5){
-            Queen.transform.position = new Vector3(75.5f, Queen.transform.position.y, Queen.transform.position.z);
-        }
-        else if(Queen.transform.position.x==75.5f){
-            Queen.transform.position = new Vector3(66.5f, Queen.transform.position.y, Queen.transform.position.z);
+        float num = Random.Range(0, 3);
+        switch(num){
+            case 0:
+                Queen.transform.position = new Vector3(66.5f, 3.5f, Queen.transform.position.z);
+                break;
+            case 1:
+                Queen.transform.position = new Vector3(66.5f, 0.35f, Queen.transform.position.z);
+                break;
+            case 2:
+                Queen.transform.position = new Vector3(75.5f, 3.5f, Queen.transform.position.z);
+                break;
+            case 3:
+                Queen.transform.position = new Vector3(75.5f, 0.35f, Queen.transform.position.z);
+                break;
         }
     }
 }
