@@ -13,6 +13,8 @@ public class Weapon : MonoBehaviour
     public AudioSource reloadSound;
     public static string currentWeapon = "Pistol";
     public static int bulletsLeft = 30;
+    public static float fireRate = 1f;
+    float timer = 3;
     void Awake()
     {
         //Laser AR
@@ -25,13 +27,15 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
+        timer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(Reload());
 
         }
-        if (Input.GetMouseButtonDown(0) && bulletsLeft > 0)
+        if (Input.GetMouseButtonDown(0) && bulletsLeft > 0 && timer>=Weapon.fireRate)
         {
+            timer = 0;
             firingEffect.Play();
             Weapon.bulletsLeft--;
             Shoot();

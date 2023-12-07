@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
         switch (GameManager.stageNumber)
         {
             case 1:
+                dialogueBox.toggle();
+                dialogueBox.SetDialogueText("We are starting round 1, kill the zombies");
                 defaultRoundTimer = roundTimer;
                 break;
             case 2:
@@ -83,6 +85,9 @@ public class GameManager : MonoBehaviour
                 spawner.gameObject.SetActive(false);
             }
 
+            string text = "We are starting round " + rounds + ", kill the zombies.";
+            dialogueBox.toggle();
+            dialogueBox.SetDialogueText(text);
             rounds++;
 
             GameManager.coins += bonus * rounds;

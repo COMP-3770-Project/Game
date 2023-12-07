@@ -45,6 +45,7 @@ public class Tower : MonoBehaviour
     {
         if (FindTargets() && firing == null)
         {
+            Debug.Log("Found targets");
             firing = StartCoroutine(Attack());
         }
 
@@ -60,8 +61,10 @@ public class Tower : MonoBehaviour
     {
         // An invisible circle is created and if an enemy goes inside the circle they get targetted.
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, (Vector2)transform.position, 0f,enemy);
+        Debug.Log(hits.Length);
         if (hits.Length > 0)
         {
+            
             target = hits[0].collider;
             return true;
         }

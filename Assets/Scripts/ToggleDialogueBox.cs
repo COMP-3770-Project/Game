@@ -35,6 +35,7 @@ public class ToggleDialogueBox : MonoBehaviour
 
     public void OnButtonClick()
     {
+        isVisible = false;
         gameObject.SetActive(false);
     }
 

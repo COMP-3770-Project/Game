@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class SpawnTower : MonoBehaviour
 {
-    private GameManager manager;
+    public GameManager manager;
     
     [SerializeField] public GameObject[] towerTypes;
     public void Start()
     {
-        GameObject gm = GameObject.Find("Game Manager");
-        manager = gm.GetComponent<GameManager>();
+            
     }
     public void spawnTower(int towerId){
-        
+        if(manager!=null){
             GameObject towerToSpawn = towerTypes[towerId];
             if(manager.spawnOnLeft==0){manager.lastTower*=-1;manager.lastTower-=3; manager.spawnOnLeft=1;}
             else{manager.lastTower*=-1; manager.spawnOnLeft=0;}
@@ -21,6 +20,9 @@ public class SpawnTower : MonoBehaviour
             if(GameManager.coins >= 100){
             Instantiate(towerToSpawn, position, Quaternion.identity);
             manager.removeCoins(100);
+        }
+
+            
         }
 
 

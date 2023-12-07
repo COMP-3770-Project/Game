@@ -11,6 +11,12 @@ public class StartBtn : MonoBehaviour
             if(GameManager.stageNumber==2){
                 SceneManager.LoadScene(3);
             }
+            if(GameManager.stageNumber==3){
+                SceneManager.LoadScene(4);
+            }
+            if(GameManager.stageNumber==4){
+                SceneManager.LoadScene(5);
+            }
         }
         else{
             SceneManager.LoadScene(sceneId);

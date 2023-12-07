@@ -99,6 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   fireRate: 1
-  soundName: Cannon Sound
+  soundName: Cannon
   cost: 150
   range: 2
