@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638314973854426158
+  platformSettingsDirtyTick: 638374788976611730
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: turret
     originalName: 
-    pivot: {x: 0.3, y: 0.74}
+    pivot: {x: 0.26590216, y: 0.02308298}
     alignment: 9
     border: {x: 0, y: 0, z: 1, w: 1}
     rect:

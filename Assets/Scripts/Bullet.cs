@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log($"Collided with {collision.gameObject.name}");
 
-        if (collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 8)
         {
             collision.gameObject.GetComponent<Damageable>().TakeDamage(damage);
             Destroy(gameObject);

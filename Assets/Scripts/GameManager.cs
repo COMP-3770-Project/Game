@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -18,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameOver gameOver;
     [SerializeField] public AdvanceStage advanceStage;
     [SerializeField] public Player player;
+    [SerializeField] public ToggleDialogueBox dialogueBox;
 
     [Header("Game Settings")]
     [SerializeField] public float roundTimer;
@@ -31,12 +29,17 @@ public class GameManager : MonoBehaviour
     private bool roundEnded = false;
     private bool roundStarted = false;
     private int rounds = 1;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 536afac8e6405ff2d683f0967ce07ee3512a7cc0
     public void Start()
     {
         switch (GameManager.stageNumber)
         {
             case 1:
+                dialogueBox.toggle();
+                dialogueBox.SetDialogueText("We are starting round 1, kill the zombies");
                 defaultRoundTimer = roundTimer;
                 break;
             case 2:
@@ -46,12 +49,10 @@ public class GameManager : MonoBehaviour
                 defaultRoundTimer = roundTimer * 2f;
                 break;
         }
-
     }
 
     public void Update()
     {
-
         if (playerBase == null || player == null)
         {
             GameOver();
@@ -88,6 +89,9 @@ public class GameManager : MonoBehaviour
                 spawner.gameObject.SetActive(false);
             }
 
+            string text = "We are starting round " + rounds + ", kill the zombies.";
+            dialogueBox.toggle();
+            dialogueBox.SetDialogueText(text);
             rounds++;
 
             GameManager.coins += bonus * rounds;
@@ -104,9 +108,13 @@ public class GameManager : MonoBehaviour
         {
             spawner.gameObject.SetActive(false);
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 536afac8e6405ff2d683f0967ce07ee3512a7cc0
         gameOver.Setup(rounds, GameManager.coins);
     }
+
     public void advanceToNextStage()
     {
         foreach (Spawner spawner in spawners)
@@ -114,17 +122,18 @@ public class GameManager : MonoBehaviour
             spawner.gameObject.SetActive(false);
         }
         advanceStage.Setup(GameManager.coins);
-
     }
 
     public void addCoins(int amount)
     {
         GameManager.coins += amount;
     }
+
     public int getCoins()
     {
         return GameManager.coins;
     }
+
     public void removeCoins(int amount)
     {
         GameManager.coins -= amount;

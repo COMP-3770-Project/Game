@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] public Transform firePoint;
 
+<<<<<<< HEAD
     [Header("Weapon Statistics")]
     [SerializeField] public float fireRate;
     [SerializeField] public int damage;
@@ -29,6 +30,19 @@ public class Weapon : MonoBehaviour
     public static int bulletsLeft;
     private bool isShooting;
     private void Awake()
+=======
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    GameObject bullet;
+    public List<Sprite> weapons;
+    public AudioSource firingEffect;
+    public AudioSource reloadSound;
+    public static string currentWeapon = "Pistol";
+    public static int bulletsLeft = 30;
+    public static float fireRate = 1f;
+    float timer = 3;
+    void Awake()
+>>>>>>> 536afac8e6405ff2d683f0967ce07ee3512a7cc0
     {
         bulletsLeft = magSize;
 
@@ -42,11 +56,13 @@ public class Weapon : MonoBehaviour
     }
     private void Update()
     {
+        timer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(Reload());
 
         }
+<<<<<<< HEAD
         if (Input.GetMouseButtonDown(0) && canShoot())
         {
             isShooting = true;
@@ -56,6 +72,14 @@ public class Weapon : MonoBehaviour
         {
             isShooting = false;
             StopCoroutine(Shoot());
+=======
+        if (Input.GetMouseButtonDown(0) && bulletsLeft > 0 && timer>=Weapon.fireRate)
+        {
+            timer = 0;
+            firingEffect.Play();
+            Weapon.bulletsLeft--;
+            Shoot();
+>>>>>>> 536afac8e6405ff2d683f0967ce07ee3512a7cc0
         }
     }
 
