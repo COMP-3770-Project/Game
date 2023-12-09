@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,13 +31,14 @@ public class GameManager : MonoBehaviour
     private bool roundEnded = false;
     private bool roundStarted = false;
     private int rounds = 1;
+
+    private int temp = 0; 
+
     public void Start()
     {
         switch (GameManager.stageNumber)
         {
             case 1:
-                dialogueBox.toggle();
-                dialogueBox.SetDialogueText("We are starting round 1, kill the zombies");
                 defaultRoundTimer = roundTimer;
                 break;
             case 2:
@@ -45,7 +48,15 @@ public class GameManager : MonoBehaviour
                 defaultRoundTimer = roundTimer * 2f;
                 break;
         }
+
+
+        StartCoroutine(StartDialogue());
+
+
+
+
     }
+
 
     public void Update()
     {
@@ -56,6 +67,7 @@ public class GameManager : MonoBehaviour
 
         if (rounds == 5)
         {
+
             advanceToNextStage();
         }
 
@@ -85,9 +97,6 @@ public class GameManager : MonoBehaviour
                 spawner.gameObject.SetActive(false);
             }
 
-            string text = "We are starting round " + rounds + ", kill the zombies.";
-            dialogueBox.toggle();
-            dialogueBox.SetDialogueText(text);
             rounds++;
 
             GameManager.coins += bonus * rounds;
@@ -95,6 +104,11 @@ public class GameManager : MonoBehaviour
             roundEnded = false;
         }
 
+        if (rounds == 4 && temp == 0)
+        {
+            StartCoroutine(EndDialogue());
+            temp++;
+        }
         if (!roundEnded) roundTimer -= Time.deltaTime;
     }
 
@@ -109,6 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void advanceToNextStage()
     {
+        
         foreach (Spawner spawner in spawners)
         {
             spawner.gameObject.SetActive(false);
@@ -129,5 +144,29 @@ public class GameManager : MonoBehaviour
     public void removeCoins(int amount)
     {
         GameManager.coins -= amount;
+    }
+
+    private IEnumerator StartDialogue()
+    {
+
+        yield return new WaitForSeconds(4);
+        dialogueBox.toggle();
+
+        string text = "Hey John buddy, what's happening down in at the farm?";
+        dialogueBox.SetDialogueText(text);
+        yield return new WaitForSeconds(3);
+
+        text = "Did you say your wife just got captured by aliens? Give me time to locate the aircraft and it's positioning";
+        dialogueBox.SetDialogueText(text);
+        yield return new WaitForSeconds(5);
+        dialogueBox.toggle();
+    }
+
+    public IEnumerator EndDialogue()
+    {
+        dialogueBox.toggle();
+        string text = "The aircraft is headed towards Seattle, get out of there boss!!!";
+        dialogueBox.SetDialogueText(text);
+        yield return new WaitForSeconds(5);
     }
 }

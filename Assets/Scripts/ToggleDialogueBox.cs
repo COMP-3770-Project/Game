@@ -10,20 +10,12 @@ public class ToggleDialogueBox : MonoBehaviour
     public TextMeshProUGUI text;
 
 
-    //public void Awake()
-    //{
-    //    ani = GetComponent<Animator>();
-    //    ani.SetBool("isVisible", true);
-    //}
 
 
     public void Start()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(isVisible);
 
-        //questBook.SetActive(isVisible);
-        //ani = GetComponent<Animator>();
-        //ani.SetBool("isVisible", true);
     }
 
 
@@ -36,6 +28,7 @@ public class ToggleDialogueBox : MonoBehaviour
     public void OnButtonClick()
     {
         isVisible = false;
+        //ani.SetBool("isVisible", isVisible);
         gameObject.SetActive(false);
     }
 
