@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,10 +37,23 @@ public class GameManager : MonoBehaviour
 
     public bool doneDialogue;
 
+    public Scene scene; 
     public void Start()
     {
         doneDialogue = false;
-        StartCoroutine(StartDialogue());
+
+        scene = SceneManager.GetActiveScene();
+
+        if (scene.name == "GameLevel")
+        {
+            StartCoroutine(StartDialogueStage1());
+        } else if (scene.name == "Stage2")
+        {
+            StartCoroutine(StartDialogueStage2());
+        } else if (scene.name == "Stage3")
+        {
+            StartCoroutine(StartDialogueStage3());
+        }
 
         switch (GameManager.stageNumber)
         {
@@ -112,7 +126,15 @@ public class GameManager : MonoBehaviour
 
             if (rounds == 4 && temp == 0)
             {
-                StartCoroutine(EndDialogue());
+                if (scene.name == "GameLevel")
+                {
+                    StartCoroutine(EndDialogueStage1());
+                }
+                else if (scene.name == "Stage2")
+                {
+                    StartCoroutine(EndDialogueStage2());
+                }
+                
                 temp++;
             }
             if (!roundEnded) roundTimer -= Time.deltaTime;
@@ -153,7 +175,7 @@ public class GameManager : MonoBehaviour
         GameManager.coins -= amount;
     }
 
-    public IEnumerator StartDialogue()
+    public IEnumerator StartDialogueStage1()
     {
 
         dialogueBox.toggle();
@@ -171,11 +193,51 @@ public class GameManager : MonoBehaviour
         yield return new WaitForFixedUpdate();
     }
 
-    public IEnumerator EndDialogue()
+
+    public IEnumerator StartDialogueStage2()
+    {
+
+        dialogueBox.toggle();
+
+        string text = "The aliens have hacked my servers!! You'll have to fight these aliens without me";
+        dialogueBox.SetDialogueText(text);
+        yield return new WaitForSeconds(3);
+
+        text = "You got this brother!";
+        dialogueBox.SetDialogueText(text);
+        yield return new WaitForSeconds(3);
+        dialogueBox.toggle();
+
+        doneDialogue = true;
+        yield return new WaitForFixedUpdate();
+    }
+
+    public IEnumerator StartDialogueStage3()
+    {
+        dialogueBox.toggle();
+        string text = "The weather is looking beautiful isn't it...keep on the lookout for the last rocket part!";
+        yield return new WaitForSeconds(4);
+    }
+
+
+    public IEnumerator EndDialogueStage1()
     {
         dialogueBox.toggle();
         string text = "The aircraft is headed towards Seattle, get out of there boss!!!";
         dialogueBox.SetDialogueText(text);
         yield return new WaitForSeconds(5);
+    }
+
+    public IEnumerator EndDialogueStage2()
+    {
+        dialogueBox.toggle();
+        string text = "I'm back...";
+        dialogueBox.SetDialogueText(text);
+        yield return new WaitForSeconds(2);
+        text = "Looks like you're going to Cali, finish off the last of these aliens and head out!";
+        dialogueBox.SetDialogueText(text);
+        yield return new WaitForSeconds(3);
+
+
     }
 }

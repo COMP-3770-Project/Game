@@ -7629,6 +7629,8 @@ MonoBehaviour:
   spawnOnLeft: 0
   bonus: 0
   doneDialogue: 0
+  scene:
+    m_Handle: 0
 --- !u!4 &1677674515
 Transform:
   m_ObjectHideFlags: 0
@@ -8600,7 +8602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38, y: 148}
+  m_AnchoredPosition: {x: -4, y: 148}
   m_SizeDelta: {x: 302.181, y: 242.699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934651719
