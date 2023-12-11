@@ -34,8 +34,13 @@ public class GameManager : MonoBehaviour
 
     private int temp = 0; 
 
+    public bool doneDialogue;
+
     public void Start()
     {
+        doneDialogue = false;
+        StartCoroutine(StartDialogue());
+
         switch (GameManager.stageNumber)
         {
             case 1:
@@ -50,7 +55,6 @@ public class GameManager : MonoBehaviour
         }
 
 
-        StartCoroutine(StartDialogue());
 
 
 
@@ -60,56 +64,59 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if (playerBase == null || player == null)
+        if (doneDialogue)
         {
-            GameOver();
-        }
-
-        if (rounds == 5)
-        {
-
-            advanceToNextStage();
-        }
-
-        if (playerBase != null)
-        {
-            money.text = GameManager.coins.ToString();
-            roundTracker.text = rounds.ToString();
-            ammoTracker.text = Weapon.bulletsLeft.ToString();
-        }
-
-        if (!roundStarted && roundTimer > 0)
-        {
-            foreach (Spawner spawner in spawners)
+            if (playerBase == null || player == null)
             {
-                spawner.gameObject.SetActive(true);
+                GameOver();
             }
 
-            roundStarted = true;
-        }
-
-        if (roundTimer <= 0 && playerBase != null)
-        {
-            roundEnded = true;
-            roundStarted = false;
-            foreach (Spawner spawner in spawners)
+            if (rounds == 5)
             {
-                spawner.gameObject.SetActive(false);
+
+                advanceToNextStage();
             }
 
-            rounds++;
+            if (playerBase != null)
+            {
+                money.text = GameManager.coins.ToString();
+                roundTracker.text = rounds.ToString();
+                ammoTracker.text = Weapon.bulletsLeft.ToString();
+            }
 
-            GameManager.coins += bonus * rounds;
-            roundTimer = defaultRoundTimer;
-            roundEnded = false;
-        }
+            if (!roundStarted && roundTimer > 0 && doneDialogue)
+            {
+                foreach (Spawner spawner in spawners)
+                {
+                    spawner.gameObject.SetActive(true);
+                }
 
-        if (rounds == 4 && temp == 0)
-        {
-            StartCoroutine(EndDialogue());
-            temp++;
+                roundStarted = true;
+            }
+
+            if (roundTimer <= 0 && playerBase != null && doneDialogue)
+            {
+                roundEnded = true;
+                roundStarted = false;
+                foreach (Spawner spawner in spawners)
+                {
+                    spawner.gameObject.SetActive(false);
+                }
+
+                rounds++;
+
+                GameManager.coins += bonus * rounds;
+                roundTimer = defaultRoundTimer;
+                roundEnded = false;
+            }
+
+            if (rounds == 4 && temp == 0)
+            {
+                StartCoroutine(EndDialogue());
+                temp++;
+            }
+            if (!roundEnded) roundTimer -= Time.deltaTime;
         }
-        if (!roundEnded) roundTimer -= Time.deltaTime;
     }
 
     public void GameOver()
@@ -146,10 +153,9 @@ public class GameManager : MonoBehaviour
         GameManager.coins -= amount;
     }
 
-    private IEnumerator StartDialogue()
+    public IEnumerator StartDialogue()
     {
 
-        yield return new WaitForSeconds(4);
         dialogueBox.toggle();
 
         string text = "Hey John buddy, what's happening down in at the farm?";
@@ -158,8 +164,11 @@ public class GameManager : MonoBehaviour
 
         text = "Did you say your wife just got captured by aliens? Give me time to locate the aircraft and it's positioning";
         dialogueBox.SetDialogueText(text);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         dialogueBox.toggle();
+
+        doneDialogue = true;
+        yield return new WaitForFixedUpdate();
     }
 
     public IEnumerator EndDialogue()

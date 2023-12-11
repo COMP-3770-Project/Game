@@ -4155,8 +4155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27, y: 2}
-  m_SizeDelta: {x: 109.7485, y: 96.2899}
+  m_AnchoredPosition: {x: -31.68, y: 0.0226}
+  m_SizeDelta: {x: 125.68, y: 117.7625}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868619340
 MonoBehaviour:
@@ -4187,8 +4187,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281874488
-  m_fontColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+    rgba: 4280624422
+  m_fontColor: {r: 0.1509434, g: 0.14595942, b: 0.14595942, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4205,8 +4205,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7628,6 +7628,7 @@ MonoBehaviour:
   lastTower: 0
   spawnOnLeft: 0
   bonus: 0
+  doneDialogue: 0
 --- !u!4 &1677674515
 Transform:
   m_ObjectHideFlags: 0
@@ -8599,8 +8600,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69, y: 403}
-  m_SizeDelta: {x: 256.008, y: 181.387}
+  m_AnchoredPosition: {x: -38, y: 148}
+  m_SizeDelta: {x: 302.181, y: 242.699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934651719
 MonoBehaviour:
@@ -8636,7 +8637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7addc2622f78b4b2b821c9901413cf59, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68208a971413a47129cc95a8cc7829b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9454,7 +9455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2144494861
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9519,7 +9520,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144494860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
