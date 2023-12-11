@@ -572,8 +572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588d0d1f0eb721f438763461e67af9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
-  enemyCount: 1
+  spawnRate: 10
+  enemyCount: 3
   enemies:
   - {fileID: 6657050458412615061, guid: 61cfef7b00af22b4b80e46ea5052fe8e, type: 3}
   - {fileID: 8537471332150710763, guid: b40a3f0d2cae65444926763cb6318d14, type: 3}
@@ -4343,8 +4343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588d0d1f0eb721f438763461e67af9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
-  enemyCount: 1
+  spawnRate: 10
+  enemyCount: 3
   enemies:
   - {fileID: 6657050458412615061, guid: 61cfef7b00af22b4b80e46ea5052fe8e, type: 3}
   - {fileID: 8537471332150710763, guid: b40a3f0d2cae65444926763cb6318d14, type: 3}

@@ -216,6 +216,7 @@ public class GameManager : MonoBehaviour
     {
         dialogueBox.toggle();
         string text = "The weather is looking beautiful isn't it...keep on the lookout for the last rocket part!";
+        dialogueBox.SetDialogueText(text);
         yield return new WaitForSeconds(4);
     }
 
