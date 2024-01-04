@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.layer == 8)
         {
-            collision.gameObject.GetComponent<Damageable>().TakeDamage(1);
+            collision.gameObject.GetComponent<Damageable>().TakeDamage(10);
             Destroy(gameObject);
         }
 

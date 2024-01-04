@@ -23,13 +23,10 @@ public class GameManagerSideScroller : MonoBehaviour
         Gate = GameObject.Find("GateOpen");
         Gate.SetActive(false);
         GameManagerSideScroller.coins = prevCoins();
-
     }
 
     public void Update()
     {
-
-
         if (player != null)
         {
             money.text = GameManager.coins.ToString();
@@ -37,7 +34,7 @@ public class GameManagerSideScroller : MonoBehaviour
         }
 
     }
-    
+
     public void Respawn()
     {
 
@@ -45,7 +42,8 @@ public class GameManagerSideScroller : MonoBehaviour
         Debug.Log("Respawn");
 
     }
-    public int prevCoins(){
+    public int prevCoins()
+    {
         return GameManagerSideScroller.coins;
     }
     public void addCoins(int amount)
