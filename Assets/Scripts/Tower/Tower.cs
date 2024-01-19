@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class Tower : MonoBehaviour
 {
@@ -34,13 +33,6 @@ public class Tower : MonoBehaviour
         }
     }
 
-    // This is to show the range in the UI.
-    private void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position, transform.forward, range);
-    }
-
     void Update()
     {
         if (FindTargets() && firing == null)
@@ -60,11 +52,11 @@ public class Tower : MonoBehaviour
     private bool FindTargets()
     {
         // An invisible circle is created and if an enemy goes inside the circle they get targetted.
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, (Vector2)transform.position, 0f,enemy);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, range, (Vector2)transform.position, 0f, enemy);
         Debug.Log(hits.Length);
         if (hits.Length > 0)
         {
-            
+
             target = hits[0].collider;
             return true;
         }

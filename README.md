@@ -2,24 +2,59 @@
 
 Group 15's Game Project for COMP 3770: Game Design, Development, and Tools. <br>
 
-# TO DO List
-
-Make tower selection user interface. <br>
-Add more enemy types <br>
-Add more tower types <br>
-Add in dialogue prompts <br>
-Add royalty-free background music <br>
-Create a Main Menu.
-
 # Dependencies
 
-Text Mesh Pro
+-   Unity Game Engine Long Time Support Version 2022.3.8f1
+-   Text Mesh Pro
 
 # Contributors
 
-Jovic Panahon - Programming, Assets, and Game Design. <br>
-Nick Boisclair - Programming, Assets, and Game Design. <br>
-Matthew Connell - Assets <br>
-Mark Zayat - TBD <br>
-Joe Elson - TBD <br>
-Adnan Naeem - TBD <br>
+[Jovic Panahon](https://github.com/jpanahon)
+
+-   Quality Assurance
+-   Tower Mechanics
+-   Weapon Mechanics
+-   Character Design
+-   Game Design
+-   Play Tester
+
+<br>
+
+[Nick Boisclair](https://github.com/nboisclair64)
+
+-   Cutscenes
+-   Game Design
+-   Player Mechanics
+-   Round Mechanics
+-   Final Boss Fight
+-   Asset Creation
+
+<br>
+
+[Matthew Connell](https://github.com/matt-connell)
+
+-   Game Design
+-   Asset Creation
+-   Character Dialogue
+
+[Mark Zayat](https://github.com/zayatMark)
+
+-   Game Document
+-   Game Design
+-   UI/UX
+
+<br>
+
+[Joe Elson](https://github.com/joe-elson)
+
+-   Quality Assurance
+-   Game Design
+-   Asset Creation
+
+<br>
+
+[Adnan Naeem](https://github.com/Adi54321)
+
+-   Quality Assurance
+-   Game Design
+-   Debugging
